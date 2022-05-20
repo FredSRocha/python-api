@@ -1,0 +1,13 @@
+GET http://localhost:5000/emp HTTP/1.1
+
+###
+
+POST http://localhost:5000/create HTTP/1.1
+content-type: application/json
+
+{
+  "name": "John Doe",
+  "email": "johndoe@gmail.com",
+  "phone": "991234789",
+  "address": "Lorem ipsum dolor"
+}
