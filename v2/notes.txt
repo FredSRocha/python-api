@@ -1,0 +1,9 @@
+pip install Flask
+pip install -U flask-cors
+pip install flask-mysql
+
+https://jkomp.com/2022/05/06/create-restful-api-using-python-mysql-816/
+
+https://rapidapi.com/blog/python-django-rest-api-tutorial/
+
+SELECT * FROM room WHERE `start` >= '2022-05-19 08:00:00' AND `end` <= '2022-05-21 18:00:00';
