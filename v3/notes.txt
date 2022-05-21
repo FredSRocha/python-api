@@ -1,0 +1,27 @@
+pip install Flask
+pip install -U flask-cors
+pip install flask-mysql
+
+Referências
+
+https://jkomp.com/2022/05/06/create-restful-api-using-python-mysql-816/
+
+https://www.urlencoder.org/
+
+
+APENAS CONSIDERAÇÕES DELETE ISTO >>>
+
+A lógica correta é validar a disposição da sala pena data e hora final de uma sala, que é quando ela geralmente é entregue, ou seja, fica disponível para ser alugada novamente.
+
+-- Query de salas - status = 0/1 (disponíveis/alugadas)
+SELECT * FROM `room` WHERE `name`='Sala 1' AND `capacity` >='10' AND `start` >='2022-05-21 08:00:00' AND `end` <='2022-05-25 18:00:00' AND `status` = 0;
+
+-- Deve ser considerado a data final para aluguel, pois a data inicial é o ponto de partida de uma sala alugada até a sua disponibilidade.
+SELECT * FROM `room` WHERE `capacity` >='5' AND `end` <='2022-05-22 18:00:00';
+
+// Esse erro é disparado quando usa-se um atributo não existente nos parâmetros da requisição (body).
+UnboundLocalError: local variable 'cursor' referenced before assignment
+
+// O erro 500 (ERRO NO SQL) na resposta de requisição significa parâmetros incompletos no body da mensagem.
+
+<<<

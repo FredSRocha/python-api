@@ -1,0 +1,36 @@
+# API DOCS
+
+### Listagem de todas as salas
+
+GET http://localhost:5000/room HTTP/1.1
+
+### Busca filtrada por nome
+
+GET http://localhost:5000/room/search/Sala 1 HTTP/1.1
+
+### Busca filtrada por salas disponíveis (capacidade/data)
+
+GET http://localhost:5000/room/search/5/2022-05-21 18:00:00 HTTP/1.1
+
+### Cadastro de salas de aula
+
+POST http://localhost:5000/room/create HTTP/1.1
+content-type: application/json
+
+{
+  "name": "Sala 4",
+  "capacity": 75,
+  "start": "2022-05-19 08:00:00",
+  "end": "2022-05-21 18:00:00"
+}
+
+### Agendamento de salas de aula
+
+PUT http://localhost:5000/room/rent HTTP/1.1
+content-type: application/json
+
+{
+  "id": 2,
+  "start": "2022-05-21 18:00:00",
+  "end": "2022-05-22 14:00:00"
+}

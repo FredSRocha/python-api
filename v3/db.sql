@@ -1,0 +1,15 @@
+CREATE DATABASE IF NOT EXISTS `4linux`
+
+CHARACTER SET utf8
+
+COLLATE utf8_general_ci;
+
+USE `4linux`;
+
+CREATE TABLE IF NOT EXISTS `room` (
+  `id` int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NULL,
+  `capacity` smallint(6) NOT NULL,
+  `start` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `end` timestamp NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4, AUTO_INCREMENT=1;
